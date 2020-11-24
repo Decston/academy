@@ -27,13 +27,38 @@
 			</button>
 			
 			<div id="navMobile" class="navbar-collapse collapse justify-content-end">
-				<a class="btn-nav nav-item nav-link"><i class="fas fa-home"></i>  Home</a>
-				<a class="btn-nav nav-item nav-link" th:href="@{inserirAlunos}"><i class="fas fa-user-graduate"></i>  Cadastrar Aluno</a>
-				<a class="btn-nav nav-item nav-link"><i class="fas fa-search"></i>  Pesquisar Aluno</a>
+				<a class="btn-nav nav-item nav-link" th:href="@{/}" style="color: inherit"><i class="fas fa-home"></i>  Home</a>
+				<a class="btn-nav nav-item nav-link" th:href="@{inserirAlunos}" style="color: inherit"><i class="fas fa-user-graduate"></i>  Cadastrar Aluno</a>
+				<a data-toggle="modal" data-target="#modalPesquisa" class="btn-nav nav-item nav-link"><i class="fas fa-search"></i>  Pesquisar Aluno</a>
 				<a class="btn-nav-out nav-item nav-link btn-danger"><i class="fas fa-times"></i>  Sair</a>
 			</div>
 		</nav>
 	</header>
+	
+	<!-- Modal -->
+	<div th:fragment="modal">
+		<div class="modal fade" id="modalPesquisa">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Encontre um aluno</h5>
+						<button type="button" class="close" data-dismiss="modal">
+							<span>&times;</span>
+						</button>
+					</div>
+					<form method="post" action="pesquisar-aluno" th:object="${aluno}">
+						<div class="modal-body">
+							<input type="text" placeholder="Digite o Nome do Aluno" th:field="*{nome}" class="form-control" />
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+							<button type="submit" class="btn btn-success">Pesquisar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<!-- Rodapé -->
 	<footer th:fragment="rodape">

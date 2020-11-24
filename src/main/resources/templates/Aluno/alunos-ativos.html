@@ -19,7 +19,7 @@
 	<div th:replace="fragments/fragmentos :: cabecalho"></div>
 	
 	<div class="container" style="margin-top: 50px">
-		<h3>Últimos alunos Adicionados</h3>
+		<h3>Alunos Ativos</h3>
 		<hr />
 		
 		<table class="table table-bordered table-hover">
@@ -30,11 +30,10 @@
 				<th scope="col">Matrícula</th>
 				<th scope="col">Status</th>
 				<th scope="col">Turno</th>
-				<th scope="col">Editar</th>
-				<th scope="col">Excluir</th>
+				<th scope="col">Ação</th>
 			</thead>
 			<tbody>
-				<tr scope="row" th:each="alunos : ${alunosList}">
+				<tr scope="row" th:each="alunos : ${alunosAtivos}">
 				
 					<td th:text="${alunos.nome}"></td>
 					<td th:text="${alunos.curso}"></td>
@@ -46,9 +45,7 @@
 						<a class="btn btn-primary"th:href="@{alterar/{id}(id=${alunos.id})}">
 							
 						<i class="fas fa-edit"></i>Editar</a> 
-					</td>	
 						
-					<td>
 						<a class="btn btn-danger"th:href="@{excluir/{id}(id=${alunos.id})}">
 							
 						<i class="fas fa-times"></i>Excluir</a> 
@@ -60,8 +57,6 @@
 		</table>
 		
 	</div>
-	
-	<div th:replace="fragments/fragmentos :: modal"></div>
 	
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

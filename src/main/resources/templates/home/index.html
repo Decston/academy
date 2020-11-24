@@ -24,16 +24,22 @@
 	
 			<div class="botoes">
 				<div class="wm">
-					<h5 class="btn btn-index">CADASTRAR ALUNO</h5>
+					<a th:href="@{inserirAlunos}">
+						<h5 class="btn btn-index">CADASTRAR ALUNO</h5>
+					</a>
 				</div>
 				
 				<div class="wm">
-					<h5 class="btn btn-index justify-content-center">ENCONTRAR ALUNO</h5>
+					<a th:href="@{alunos-adicionados}">
+						<h5 class="btn btn-index justify-content-center">LISTAR ALUNOS</h5>
+					</a>
 				</div>
 				<div class="clear"></div>
 			</div>
 		</div>
 	</section>
+	
+	<div th:replace="fragments/fragmentos :: modal"></div>
 	
 	<div th:replace="fragments/fragmentos :: rodape"></div>
 	
