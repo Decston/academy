@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <title>Projeto Academy</title>
-<meta name="Author" content="Alisson"/>
-<link rel="stylesheet" href="css/style.css"/>
+<meta name="Author" content="Alisson" />
+<link rel="stylesheet" href="css/style.css" />
 <script src="https://kit.fontawesome.com/006642858d.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap"
+	rel="stylesheet" />
 </head>
 <body>
-	
+
 	<div th:replace="fragments/fragmentos :: cabecalho"></div>
-	
-	<section class="neo-section" style="background-image: url('img/bg-index.jpg');">
-		<div class="sombra"></div>
-			
-		<div class="center neo-container">
-			<h1 class="texto-centro">Sistema de Gerenciamento de Aluno</h1>
-		
-	
-			<div class="botoes">
-				<div class="wm">
-					<a th:href="@{inserirAlunos}">
-						<h5 class="btn btn-index">CADASTRAR ALUNO</h5>
-					</a>
-				</div>
-				
-				<div class="wm">
-					<a th:href="@{alunos-adicionados}">
-						<h5 class="btn btn-index justify-content-center">LISTAR ALUNOS</h5>
-					</a>
-				</div>
-				<div class="clear"></div>
+
+	<section class="neo-section"
+		style="background-image: url('img/bg-index.jpg');">
+	<div class="sombra"></div>
+
+	<div class="center neo-container">
+		<h1 class="texto-centro">Sistema de Gerenciamento de Aluno</h1>
+
+
+		<div class="botoes">
+			<div class="wm">
+				<a th:href="@{inserirAlunos}">
+					<h5 class="btn btn-index">CADASTRAR ALUNO</h5>
+				</a>
 			</div>
+
+			<div class="wm">
+				<a th:href="@{filtro-alunos}">
+					<h5 class="btn btn-index justify-content-center">FILTRAR ALUNOS</h5>
+				</a>
+			</div>
+			<div class="clear"></div>
 		</div>
+	</div>
 	</section>
-	
+
 	<div th:replace="fragments/fragmentos :: modal"></div>
-	
+
 	<div th:replace="fragments/fragmentos :: rodape"></div>
-	
+
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>

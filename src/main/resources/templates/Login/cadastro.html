@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<title>Projeto Academy - Cadastro</title>
+<meta name="Author" content="Alisson" />
+<link rel="stylesheet" href="css/login.css" />
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap"
+	rel="stylesheet" />
+</head>
+<body>
+	
+	<div class="Login-Form">
+		<div class="container">
+			<div class="main-div">
+				<div class="texto-header">
+					<h2>Cadastro de Usuário</h2>
+					<p>Crie seu usuário no sistema.</p>
+				</div>
+				
+				<form method="post" th:object="${usuario}" action="salvarUsuario">
+					<div class="form-group">
+						<input type="email" class="form-control" th:field="*{email}" placeholder="email"></input>
+					</div>
+				
+					<div class="form-group">
+						<input type="text" class="form-control" th:field="*{user}" placeholder="username"></input>
+					</div>
+					
+					<div class="form-group">
+						<input type="password" class="form-control" th:field="*{senha}" placeholder="senha"></input>
+					</div>
+					
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
+					<button type="button" class="btn btn-info">Voltar</button>
+				</form>			
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

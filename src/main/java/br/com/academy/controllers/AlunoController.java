@@ -89,6 +89,7 @@ public class AlunoController {
 	public ModelAndView filtroAlunos() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Aluno/filtroAlunos");
+		mv.addObject("aluno", new Aluno());
 		return mv;
 	}
 	
@@ -134,6 +135,7 @@ public class AlunoController {
 			listaAlunos = alunorepositorio.findByNomeContainingIgnoreCase(nome);
 		}
 		mv.addObject("ListaDeAlunos", listaAlunos);
+		mv.addObject("aluno", new Aluno());
 		mv.setViewName("Aluno/pesquisa-resultado");
 		return mv;
 	}	
