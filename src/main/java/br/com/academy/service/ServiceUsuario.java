@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import br.com.academy.Dao.UsuarioDao;
 import br.com.academy.exceptions.CriptoExistException;
 import br.com.academy.exceptions.EmailExistException;
+import br.com.academy.exceptions.ServiceExc;
 import br.com.academy.model.Usuario;
 import br.com.academy.util.Util;
 
@@ -31,6 +32,11 @@ public class ServiceUsuario {
 		}
 		
 		repositorioUsuario.save(user);
+	}
+	
+	public Usuario loginUser(String user, String senha) throws ServiceExc {
+		Usuario userLogin = repositorioUsuario.buscarLogin(user, senha);
+		return userLogin;
 	}
 	
 }
